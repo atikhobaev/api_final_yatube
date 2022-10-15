@@ -7,15 +7,10 @@ app_name = 'api'
 
 router = routers.DefaultRouter()
 
-router.register('posts', PostViewSet)
-router.register(r'posts/(?P<post_id>\d+)/comments',
-                CommentViewSet, basename='comments')
-router.register('groups', GroupViewSet)
-
-router.register('posts', PostViewSet)
-router.register(r'posts/(?P<post_id>\d+)/comments',
-                CommentViewSet, basename='comments')
 router.register('groups', GroupViewSet, basename='groups')
+router.register('posts', PostViewSet)
+router.register(r'posts/(?P<post_id>\d+)/comments',
+                CommentViewSet, basename='comments')
 router.register('follow', FollowViewSet, basename='follow')
 
 urlpatterns = [
